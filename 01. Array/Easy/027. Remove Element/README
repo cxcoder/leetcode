@@ -8,8 +8,26 @@ Example:
 Given input array nums = [3,2,2,3], val = 3
 
 Your function should return length = 2, with the first two elements of nums being 2.
+now nums = [2,2,x,x]
 
 Hint:
  1. Try two pointers.
  2. Did you use the property of "the order of elements can be changed"?
  3. What happens when the elements to remove are rare?
+
+删除数组中等于给定值的元素，统计剩余的元素个数，并返回
+使用两个指针，一个指针记录不同元素待插入位置，另一个遍历数组
+
+    removeElement(nums[0..n-1], val)
+    j ← 0
+    for i ← 0 to n-1 do
+        if nums[i] ≠ val then
+            nums[j] ← nums[i]
+            j ← j + 1
+    end
+    return j
+时间复杂度O(n)，空间复杂度O(1)
+
+
+
+
