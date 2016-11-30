@@ -7,6 +7,20 @@ Note:
 Could you optimize your algorithm to use only O(k) extra space?
 
 返回给定行的杨辉三角的序列
+1 0 0 0 0
+1 1 0 0 0
+1 2 1 0 0
+1 3 3 1 0
+1 4 6 4 1
+...
 
-
-
+其特点是 每个数等于它上方两数之和，可以用数组记录前一行元素，然后循环推导出下一行的数据
+  getRow(k)
+  A[0...k]
+  A[0] ← 1
+  for i ← 0 to k do
+    for j ← i to limit 1 by -1 do
+      A[j] += A[j-1]
+   end 
+  end 
+空间复杂度为 O(k)
